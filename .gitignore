@@ -2,4 +2,7 @@ Debug/
 Release/
 .launches/
 .settings/
+core
 f767_remote_monitor Debug.cfg
+f767_lcd_test.pdf
+f767_lcd_test.txt
