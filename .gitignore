@@ -1,2 +1,5 @@
 Debug/
+Release/
+.launches/
+.settings/
 f767_remote_monitor Debug.cfg
