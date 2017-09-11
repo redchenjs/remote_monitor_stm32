@@ -29,5 +29,5 @@ void driver_init(void)
 
 void device_suspend(void)
 {
-//    HAL_Delay(1000);
+    HAL_Delay(100);
 }

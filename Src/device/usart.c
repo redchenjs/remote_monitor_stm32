@@ -10,6 +10,7 @@
 
 #include "device/usart.h"
 
+uint16_t usart3_buffer_read;
 ring_buffer_t usart3_rx_buffer;
 extern UART_HandleTypeDef huart3;
 
@@ -34,6 +35,20 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle)
 	if(++usart3_rx_buffer.tail >= RING_BUFFER_SIZE) {
 		usart3_rx_buffer.tail = 0;
 	}
+	if(usart3_rx_buffer.head >= RING_BUFFER_SIZE) {
+		usart3_rx_buffer.head = 0;
+	}
+
+//	if (usart3_rx_buffer.data[usart3_rx_buffer.tail] == '\0') {
+//		usart3_rx_buffer.tail = 1;
+//		usart3_rx_buffer.head = 1;
+//		usart3_buffer_read = 1;
+//	}
+//
+//	if (usart3_rx_buffer.data[usart3_rx_buffer.tail] == '\1') {
+//		usart3_buffer_read = 0;
+//	}
 
 	HAL_UART_Receive_IT(UartHandle, (uint8_t *)&usart3_rx_buffer.data[usart3_rx_buffer.tail], 1);
+
 }

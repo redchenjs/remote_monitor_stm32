@@ -151,6 +151,7 @@ int main(void)
 
   /* USER CODE BEGIN 3 */
 	  tasks_loop();
+	  device_suspend();
   }
   /* USER CODE END 3 */
 

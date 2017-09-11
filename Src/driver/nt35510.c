@@ -533,7 +533,7 @@ void nt35510_init(void)
 	nt35510_WR_REG(0x2900);
 
 	nt35510_Display_Dir(0);		//默认为竖屏
-	nt35510_clear(White);
+	nt35510_clear(Gray);
 	HAL_Delay(150);
 	NT35510_BL();				//点亮背光
 }
